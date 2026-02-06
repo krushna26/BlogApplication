@@ -2,12 +2,18 @@ package com.example.Blogapp.DTO;
 
 
 import com.example.Blogapp.entity.Comment;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.util.Set;
 
 public class PostDto {
+    @NotNull
     private long id;
+
+    @Size(min = 4,message = "tittle should of minimum 4 characters")
     private String title;
+    @Size(min=10)
     private String content;
     private String description;
 
