@@ -2,6 +2,7 @@ package com.example.Blogapp.controller;
 
 import com.example.Blogapp.DTO.PostDto;
 import com.example.Blogapp.service.postServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class postController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<PostDto>createPost(@RequestBody PostDto postData){
+    public ResponseEntity<PostDto>createPost( @Valid  @RequestBody PostDto postData){
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(postService.createPost(postData));

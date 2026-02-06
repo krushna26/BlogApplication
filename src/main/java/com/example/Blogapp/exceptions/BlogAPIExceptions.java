@@ -5,9 +5,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class BlogAPIExceptions extends RuntimeException {
      public BlogAPIExceptions(String resourceName, String fieldName, Long fieldValue) {
-          super(resourceName+" does not belong to post ID "+" fieldName "+ fieldValue);
+          super(resourceName+" does not belong to post ID "+fieldName + fieldValue);
 
      }
+
 
     }
 
